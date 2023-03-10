@@ -15,7 +15,7 @@ export default function Home() {
                         <li key={type}>
                             <Link
                                 href={{
-                                    pathname: `./rendering/${type}`,
+                                    pathname: `./rendering/${type.toLowerCase()}`,
                                 }}
                             >
                                 {type}
