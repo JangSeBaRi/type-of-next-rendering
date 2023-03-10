@@ -17,7 +17,8 @@ const Ssr = ({ parsedData }: SsrPageProps) => {
     const [data, setData] = useState<SsrPageProps["parsedData"]>(parsedData);
 
     return (
-        <div className="w-screen h-screen flex justify-center items-center">
+        <div className="w-screen h-screen flex flex-col justify-center items-center gap-5">
+            <div className="text-6xl">SSR</div>
             <ul>
                 {Object.keys(data).map((key, keyIndex) => {
                     const value = data[key as keyof SsrPageProps["parsedData"]];

@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 export default function Home() {
     const router = useRouter();
 
-    const typeOfNextRendering = ["ssg", "ssr", "csr", "isr"];
+    const typeOfNextRendering = ["SSG", "SSR", "CSR", "ISR"];
 
     return (
         <div className="flex flex-col w-screen h-screen justify-center items-center gap-3">

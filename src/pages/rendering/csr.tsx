@@ -35,7 +35,8 @@ const Csr = () => {
     }, []);
 
     return (
-        <div className="w-screen h-screen flex justify-center items-center">
+        <div className="w-screen h-screen flex flex-col justify-center items-center gap-5">
+            <div className="text-6xl">CSR</div>
             <ul>
                 {Object.keys(data).map((key, keyIndex) => {
                     const value = data[key as keyof CsrPageProps["parsedData"]];

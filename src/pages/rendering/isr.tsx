@@ -16,7 +16,8 @@ const Isr = ({ parsedData }: IsrPageProps) => {
     const [data, setData] = useState<IsrPageProps["parsedData"]>(parsedData);
 
     return (
-        <div className="w-screen h-screen flex justify-center items-center">
+        <div className="w-screen h-screen flex flex-col justify-center items-center gap-5">
+            <div className="text-6xl">ISR 5Second</div>
             <ul>
                 {Object.keys(data).map((key, keyIndex) => {
                     const value = data[key as keyof IsrPageProps["parsedData"]];
@@ -24,7 +25,7 @@ const Isr = ({ parsedData }: IsrPageProps) => {
                         <div key={keyIndex} className="text-2xl">
                             {key} : {value}
                         </div>
-                    )
+                    );
                 })}
             </ul>
         </div>
@@ -36,10 +37,8 @@ export async function getStaticProps() {
     const parsedData = await data.json();
 
     return {
-        props: {
-            parsedData,
-            revalidate: 20,
-        },
+        props: { parsedData },
+        revalidate: 5,
     };
 }
 
