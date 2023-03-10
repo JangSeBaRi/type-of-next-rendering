@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 interface SsgPageProps {
@@ -13,21 +14,28 @@ interface SsgPageProps {
 }
 
 const Ssg = ({ parsedData }: SsgPageProps) => {
-    const [data, setData] = useState<SsgPageProps["parsedData"]>(parsedData);
+    const router = useRouter();
 
     return (
         <div className="w-screen h-screen flex flex-col justify-center items-center gap-5">
-            <div className="text-6xl">SSG</div>
-            <ul>
-                {Object.keys(data).map((key, keyIndex) => {
-                    const value = data[key as keyof SsgPageProps["parsedData"]];
+            <div className="text-4xl font-bold">SSG</div>
+            <p className="text-sm text-neutral-400">Fetched only once, when running yarn build on deployment.</p>
+            <ul className="text-base">
+                {Object.keys(parsedData).map((key, keyIndex) => {
+                    const value = parsedData[key as keyof SsgPageProps["parsedData"]];
                     return (
-                        <div key={keyIndex} className="text-2xl">
+                        <li key={keyIndex}>
                             {key} : {value}
-                        </div>
+                        </li>
                     )
                 })}
             </ul>
+            <button 
+                className="relative text-sm border-neutral-50 border-2 w-32 h-10 rounded-md font-bold after:content-[''] after:w-0 hover:text-blue-300 after:bg-blue-300 after:absolute after:bottom-0.5 after:left-0 after:h-0.5 hover:after:w-full after:transition-all after:rounded-md"
+                onClick={() => router.back()}
+            >
+                Back to Home
+            </button>
         </div>
     );
 };
