@@ -1,16 +1,16 @@
-# 개발 정보 공유
+## Introduce
 
-> next-js의 rendering type 4가지 ssg, ssr, csr, isr 예시 코드 구현
+next-js의 rendering type 4가지 ssg, ssr, csr, isr 예시 코드 구현
 
-# stack
+## Stack
 
--   next-js
+-   nextJs
 -   tailwind
 
-# deploy
+## Deploy
 
-> https://type-of-next-rendering.vercel.app/
+https://type-of-next-rendering.vercel.app/
 
-# reference
+# Reference
 
-> https://theodorusclarence.com/blog/nextjs-fetch-method
+https://theodorusclarence.com/blog/nextjs-fetch-method
